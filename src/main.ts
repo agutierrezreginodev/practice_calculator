@@ -1,6 +1,7 @@
 const screen = document.getElementById("screen") as HTMLInputElement;
 const numbers = document.querySelectorAll<HTMLButtonElement>(".number");
 const operators = document.querySelectorAll<HTMLButtonElement>(".operator");
+const decimal = document.getElementById("decimal") as HTMLButtonElement;
 const equals = document.getElementById("equal") as HTMLButtonElement;
 const clear = document.getElementById("clear") as HTMLButtonElement;
 
@@ -18,6 +19,11 @@ operators.forEach((btn) => {
     currentInput += btn.dataset.value;
     screen.value = currentInput;
   });
+});
+
+decimal.addEventListener("click", () => {
+  currentInput += decimal.dataset.value;
+  screen.value = currentInput;
 });
 
 equals.addEventListener("click", () => {
